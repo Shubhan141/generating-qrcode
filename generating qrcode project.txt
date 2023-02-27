@@ -1,26 +1,22 @@
 
 
-# Importing library
+      # Importing library
 import qrcode
  
-# Data to be encode
+     # Data to be encode
 data = "https://auth.geeksforgeeks.org/user/shubhan141"
-  # now we want to add extraw feature like version box_size,border
-  # version cntr the size of QR code (smallest version 1)
-  # box_size how many pixel each box of QR code is
-  # border The border parameter controls how many boxes thick the border should be
-# Creating an instance of QRCode class
+
+     # Creating an instance of QRCode class
 qr = qrcode.QRCode(version = 1,
                    box_size = 10,
                    border = 6)
- # QRCode made & we have to encoded data inside the QR code for this we use the add_data function
-# Adding data to the instance 'qr'
+
 qr.add_data(data)
- # make function ensure us that we have given data dimention that is True
-qr.make(fit = True)
-# make_image convert QRCode object into image file
- # it takes two paramete fill_color(foreground) & back_color (background) might be changed
+       # make function ensure us that we have given data dimention that is True
+qr.make(fit = True) 
+      # make_image convert QRCode object into image file
+      # it takes two paramete fill_color(foreground) & back_color (background) might be changed
 img = qr.make_image(fill_color = 'black',
                     back_color = 'white')
- # save image in that particuler variable
+     # save image in that particuler variable
 img.save('My_QRCode2.png')
